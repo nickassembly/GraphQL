@@ -1,6 +1,7 @@
 
 import './App.css';
-import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client'
+import { ApolloClient, InMemoryCache, ApolloProvider, useQuery } from '@apollo/client';
+import DisplayData from './DisplayData';
 
 function App() {
 
@@ -9,12 +10,10 @@ function App() {
     uri: 'http://localhost:4000/graphql'
   })
 
-
-
   return (
     <ApolloProvider client={client}>
       <div className="App">
-        <h1>List of Users</h1>
+        <DisplayData />
       </div>
     </ApolloProvider>
   );
